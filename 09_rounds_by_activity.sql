@@ -1,0 +1,9 @@
+SELECT CASE
+           WHEN invested_companies >= 100 THEN 'high_activity'
+           WHEN invested_companies >= 20 THEN 'middle_activity'
+           ELSE 'low_activity'
+       END AS activity_level,
+       ROUND(AVG(investment_rounds)) AS avg_funding_rounds
+FROM fund
+GROUP BY activity_level
+ORDER BY avg_funding_rounds ASC;

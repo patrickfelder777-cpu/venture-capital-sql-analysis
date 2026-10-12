@@ -1,0 +1,4 @@
+SELECT country_code, SUM(funding_total) AS total_funding
+FROM company
+GROUP BY country_code
+ORDER BY total_funding DESC;
